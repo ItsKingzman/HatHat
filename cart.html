@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="cart.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <nav class="flex-nav" onmouseleave="hideDropdown()">
+    <div class="container">
+      <div class="grid menu">
+        <div class="column-xs-4 column-md-6">
+          <div class="group">
+            <img src="./assets/Group 53.svg" alt="Hat Logo">
+          </div>
+          <ul>
+            <li><a href="./home.html" class="nav-link">HOME</a></li>
+
+            <li><a href="./about.html" class="nav-link">ABOUT</a></li>
+
+            <li><a href="./hats.html" class="nav-link">HATS</a></li>
+
+            <li><a href="./user.html" class="nav-link">ACCOUNT</a></li>
+
+            <li class="dropdown-container">
+              <a onmouseover="showDropdown()" href="./cart.html" class="nav-link">CART&#9662;</a>
+
+              <div id="dropdown">
+                <a href="./checkout.html" class="drop">CHECKOUT</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="grid second-nav">
+        <div class="column-xs-12">
+          <nav>
+            <ol class="breadcrumb-list">
+              <li class="breadcrumb-item"><a href="./home.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="./cart.html">Cart</a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="shopping-cart">
+      <!-- Title -->
+      <div class="title">
+        Shopping Bag
+      </div>
+
+      <!-- Product #1 -->
+      <div class="items">
+        <div class="button">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="images">
+          <img src="./assets/PantoneHat.Front.svg" alt="" />
+        </div>
+
+        <div class="descriptions">
+          <span>Hat Hat</span>
+          <span>Limited Edition</span>
+          <span class="rainbow">Pantone Gradient</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <div>&minus;</div>
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="plus-btn" type="button" name="button">
+            <div>&plus;</div>
+          </button>
+        </div>
+
+        <div class="total-price">$50</div>
+      </div>
+
+      <!-- Product #2 -->
+      <div class="items">
+        <div class="button">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="images">
+          <img src="./assets/Hat.Left.svg" alt="" />
+        </div>
+
+        <div class="descriptions">
+          <span>Hat Hat</span>
+          <span>Custom Made</span>
+          <span>Black</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <div>&minus;</div>
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="plus-btn" type="button" name="button">
+            <div>&plus;</div>
+          </button>
+        </div>
+
+        <div class="total-price">$30</div>
+      </div>
+
+      <!-- Product #3 -->
+      <div class="items">
+        <div class="button">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="images">
+          <img src="./assets/Hat.Right.svg" alt="" />
+        </div>
+
+        <div class="descriptions">
+          <span>Hat Hat</span>
+          <span>Original</span>
+          <span>White</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <div>&minus;</div>
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="plus-btn" type="button" name="button">
+            <div>&plus;</div>
+          </button>
+        </div>
+
+        <div class="total-price">$19.99</div>
+      </div>
+      <button class="add-to-cart">Checkout</button>
+    </div>
+  </main>
+  <footer>
+    <div class="grid">
+      <div class="column-xs-12">
+        <p class="copyright">
+          &copy; Copyright 2022
+          Conner King
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    $('.minus-btn').on('click', function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.closest('div').find('input');
+      var value = parseInt($input.val());
+
+      if (value > 1) {
+        value = value - 1;
+      } else {
+        value = 0;
+      }
+
+      $input.val(value);
+
+    });
+
+    $('.plus-btn').on('click', function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.closest('div').find('input');
+      var value = parseInt($input.val());
+
+      if (value < 100) {
+        value = value + 1;
+      } else {
+        value = 100;
+      }
+
+      $input.val(value);
+    });
+
+    $('.like-btn').on('click', function () {
+      $(this).toggleClass('is-active');
+    });
+
+    function showDropdown() {
+      document.getElementById('dropdown').style.display = 'flex';
+    }
+
+    function hideDropdown() {
+      document.getElementById('dropdown').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

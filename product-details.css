@@ -1,0 +1,461 @@
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pontano Sans', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: rgb(80, 80, 80);
+  background: rgb(184, 184, 184);
+  text-rendering: optimizeLegibility;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0;
+  flex-flow: row wrap;
+}
+ul li {
+  list-style: none;
+  /*text-align: right;*/
+  /*display: inline-block;*/
+  padding: 0 10px;
+}
+
+a {
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: black;
+}
+a.active {
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #000000;
+  font-weight: normal;
+  margin: 1.75rem 0 1rem 0;
+}
+
+h1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 2.125rem;
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+section {
+  display: block;
+}
+
+img {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 220px;
+  height: 50px;
+  border: none;
+}
+
+nav {
+  display: block;
+}
+nav li {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.flex-nav ul {
+  position: absolute;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: none;
+  width: 100%;
+  left: 0;
+  padding: 1rem;
+  background: #4d4d4d;
+  text-align: center;
+}
+.flex-nav ul.active {
+  display: flex;
+  color: #000000;
+}
+.flex-nav ul li {
+  margin: 0.5rem 0;
+  color: #fff;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.toggle-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0;
+  flex-flow: row wrap;
+}
+.toggle-nav i {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0 0 0 0.5rem;
+}
+
+
+.group {
+  min-height: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  position: absolute;
+  line-height: 10px;
+  z-index: 999;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  list-style: none;
+}
+.breadcrumb-list li {
+  font-size: 0.85rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.breadcrumb-item.active {
+  color: #4d4d4d;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  display: inline-block;
+  padding: 0 0.5rem;
+  color: #d5d5d5;
+}
+
+.description {
+  border-top: 0.0625rem solid #e3dddd;
+  margin: 2rem 0;
+  padding: 1rem 0 0 0;
+  float: right;
+  text-align: center;
+}
+
+.add-to-cart {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  filter: drop-shadow(2px 2px 2px #000);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.add-to-cart:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.add-to-cart:active {
+  color: #000;
+}
+
+.add-to-cart:active:after {
+  background: transparent;
+}
+
+.add-to-cart:hover:before {
+  opacity: 1;
+}
+
+.add-to-cart:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.container {
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 75rem;
+  width: 100%;
+}
+
+.product-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.image-list li {
+  margin: 0;
+}
+
+.image-list {
+  display: flex;
+  overflow: hidden;
+}
+.image-list li {
+  margin: 0 0.75rem 0 0;
+  flex-basis: 100%;
+}
+.image-list li:nth-child(3) {
+  margin: 0;
+}
+.image-list img {
+  height: 10rem;
+  width: 30%;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+.image-list img:hover {
+  opacity: 0.7;
+}
+
+nav ul {
+  justify-content: flex-end;
+}
+
+.toggle-nav {
+  display: none;
+}
+
+.flex-nav {
+  min-height: 60px;
+  width: 100%;
+  border: none;
+  position: relative;
+  background-color: #4d4d4d;
+  line-height: 30px;
+  box-shadow: 0 0 5px 0;
+  z-index: 999;
+}
+.flex-nav ul {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: flex-end;
+}
+.flex-nav ul li {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Lora, 'Helvetica', 'Arial', sans-serif;
+  font-size: 12px;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* .box {
+  min-height: 700px;
+} */
+
+/*SLIDESHOW: Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 60%;
+  height: 500px;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 100px;
+  padding: 0px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 3px 3px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #4d4d4d;
+  padding: 5px 20px;
+  color: white;
+}
+
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+@keyframes fadeImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dropdown-container {
+  width: 0em;
+  position: relative;
+  display: inline-block;
+}
+
+#dropdown {
+  display: none;
+  background-color: #4d4d4d;
+  position: relative;
+}

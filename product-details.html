@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="product-details.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <nav class="flex-nav" onmouseleave="hideDropdown()">
+    <div class="container">
+      <div class="grid menu">
+        <div class="column-xs-4 column-md-6">
+          <div class="group">
+            <img src="./assets/Group 53.svg" alt="Hat Logo">
+          </div>
+          <ul>
+            <li><a href="./home.html" class="nav-link">HOME</a></li>
+
+            <li><a href="./about.html" class="nav-link">ABOUT</a></li>
+
+            <li><a href="./hats.html" class="nav-link">HATS</a></li>
+
+            <li><a href="./user.html" class="nav-link">ACCOUNT</a></li>
+
+            <li class="dropdown-container">
+              <a onmouseover="showDropdown()" href="./cart.html" class="nav-link">CART&#9662;</a>
+
+              <div id="dropdown">
+                <a href="./checkout.html" class="drop">CHECKOUT</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="grid second-nav">
+        <div class="column-xs-12">
+          <nav>
+            <ol class="breadcrumb-list">
+              <li class="breadcrumb-item"><a href="./home.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Hats</a></li>
+              <li class="breadcrumb-item active">The Hat Hat</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <div class="container box">
+
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <img src="./assets/Hat.Front.svg">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="./assets/Hat.Right.svg">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="./assets/Hat.Left.svg">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="./assets/Hat.Back.svg">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="./assets/Hat.Top.svg">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+          <img src="./assets/Hat.Bottom.svg">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#129188;</a>
+        <a class="next" onclick="plusSlides(1)">&#129189;</a>
+
+        <!-- Image text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail images -->
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="./assets/Hat.Front.svg" style="width:100%" onclick="currentSlide(1)"
+              alt="Hat Front">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="./assets/Hat.Right.svg" style="width:100%" onclick="currentSlide(2)"
+              alt="Hat Right">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="./assets/Hat.Left.svg" style="width:100%" onclick="currentSlide(3)"
+              alt="Hat Left">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="./assets/Hat.Back.svg" style="width:100%" onclick="currentSlide(4)"
+              alt="Hat Back">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="./assets/Hat.Top.svg" style="width:100%" onclick="currentSlide(5)"
+              alt="Hat Top">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="./assets/Hat.Bottom.svg" style="width:100%" onclick="currentSlide(6)"
+              alt="Hat Bottom">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    <div class="product-info">
+      <h1>The Hat Hat&#8482;</h1>
+      <h2>$19.99</h2>
+      <div class="description">
+        <p>
+          This hat will be the envy of everyone around you. You will get
+          so many compliments that you will feel like a charity case.
+        </p>
+        <p>
+          This is the original design of the famous Hat Hat. One size fits
+          all.
+        </p>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <div class="grid">
+      <div class="column-xs-12">
+        <p class="copyright">
+          &copy; Copyright 2022
+          Conner King
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    function showDropdown() {
+      document.getElementById('dropdown').style.display = 'flex';
+    }
+
+    function hideDropdown() {
+      document.getElementById('dropdown').style.display = 'none';
+    }
+  </script>
+</body>
+<script src="product-details.js"></script>
+
+</html>
